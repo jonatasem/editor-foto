@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor de Imagens</title>
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <button id="btnResetFilters">Limpar Filtros</button> <!-- Botão para limpar filtros aplicados -->
+      </div>
+      <div>
+        <button id="btnUploadImage">Nova Imagem</button> <!-- Botão para carregar nova imagem -->
+        <button id="btnSave" style="background: #0081CF; color: white;">Salvar</button> <!-- Botão para salvar a imagem editada -->
+      </div>
+    </header>
+    <div class="image-container">
+      <input type="file" accept="image/*" style="display: none;"> <!-- Input para selecionar arquivos de imagem -->
+      <img src="img/default.png" alt="Imagem padrão" /> <!-- Imagem exibida -->
+    </div>
+    <footer>
+      <div class="rotation-controls">
+        <button onclick="handleTransformation('rotateRight')"><i class='bx bx-rotate-right'></i></button>
+        <button onclick="handleTransformation('rotateLeft')"><i class='bx bx-rotate-left'></i></button>
+        <button onclick="handleTransformation('flipVertical')"><i class='bx bx-reflect-vertical'></i></button>
+        <button onclick="handleTransformation('flipHorizontal')"><i class='bx bx-reflect-horizontal'></i></button>
+      </div>
+      <span id="rangeValueDisplay"></span>
+      <input type="range" style="width: 80%;" />
+      <div class="filter-controls">
+        <button id="filterBrightness" class="active">Brilho</button>
+        <button id="filterContrast">Contraste</button>
+        <button id="filterSaturation">Saturação</button>
+        <button id="filterGrayscale">Cinza</button>
+        <button id="filterInvert">Inversão</button>
+      </div>
+    </footer>
+  </main>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>
